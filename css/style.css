@@ -1,0 +1,233 @@
+/* ========== المتغيرات (الألوان الطبية الهادئة) ========== */
+:root {
+  --blue: #1976b8;
+  --blue-dark: #0f5489;
+  --green: #2ea67a;
+  --light: #eef7fb;
+  --text: #2b3a42;
+  --white: #ffffff;
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== إعدادات عامة ========== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.8;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+.container { width: 90%; max-width: 1100px; margin: auto; }
+
+/* ========== Navbar ========== */
+.navbar {
+  background: var(--blue);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+.logo { color: var(--white); font-size: 1.4rem; font-weight: bold; }
+.nav-links { display: flex; gap: 8px; }
+.nav-links a {
+  color: var(--white);
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.nav-links a:hover,
+.nav-links a.active { background: var(--green); } /* الصفحة الحالية */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ========== Hero ========== */
+.hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  background: url("https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=1600&q=70") center/cover no-repeat,
+              linear-gradient(135deg, var(--blue), var(--green));
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 84, 137, 0.65); /* طبقة زرقاء شفافة لتوضيح النص */
+}
+.hero-content { position: relative; text-align: center; }
+.hero h1 { font-size: 2.6rem; margin-bottom: 15px; }
+.hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 25px; }
+.hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ========== الأزرار ========== */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+.btn:hover { transform: translateY(-3px); }
+.btn-primary { background: var(--green); color: var(--white); }
+.btn-primary:hover { background: #23895f; }
+.btn-secondary { background: var(--white); color: var(--blue); }
+.btn-secondary:hover { background: var(--light); }
+
+/* ========== الأقسام ========== */
+.section { padding: 60px 0; }
+.section.alt { background: var(--light); }
+.section-title {
+  text-align: center;
+  color: var(--blue-dark);
+  margin: 40px 0 25px;
+  font-size: 1.8rem;
+}
+.section > .container > .section-title:first-child { margin-top: 0; }
+.section-text { text-align: center; max-width: 750px; margin: 0 auto 35px; }
+
+.page-header {
+  background: linear-gradient(135deg, var(--blue), var(--green));
+  color: var(--white);
+  text-align: center;
+  padding: 50px 15px;
+}
+.page-header h1 { font-size: 2.2rem; }
+
+/* ========== الشبكة والكروت (CSS Grid) ========== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+.card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover { transform: translateY(-6px); box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18); }
+.card img { width: 100%; height: 190px; object-fit: cover; background: var(--light); }
+.card-body { padding: 18px; }
+.card h3 { color: var(--blue-dark); margin-bottom: 6px; }
+.card h4 { color: var(--green); margin: 12px 0 4px; }
+.card ul { padding-right: 18px; }
+.card li { list-style: disc; margin-bottom: 3px; }
+.card ul.warn li::marker { color: #d9534f; }
+.tag {
+  display: inline-block;
+  background: var(--light);
+  color: var(--blue);
+  padding: 2px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+.info-card { border-top: 4px solid var(--green); }
+
+/* ========== نصائح ========== */
+.tips { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.tip {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border-right: 5px solid var(--green);
+  transition: transform 0.3s;
+}
+.tip:hover { transform: scale(1.03); }
+
+/* ========== قسمين بجانب بعض (Flexbox) ========== */
+.two-col { display: flex; gap: 35px; align-items: center; flex-wrap: wrap; }
+.two-col > * { flex: 1 1 320px; }
+.two-col img { border-radius: 12px; box-shadow: var(--shadow); }
+.two-col h2 { color: var(--blue-dark); margin-bottom: 10px; }
+
+.check-list { max-width: 600px; margin: auto; }
+.check-list li {
+  background: var(--light);
+  margin-bottom: 10px;
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+.check-list li::before { content: "✔ "; color: var(--green); }
+
+.notice {
+  margin-top: 35px;
+  background: #fff7e0;
+  border-right: 5px solid #f0ad4e;
+  padding: 14px;
+  border-radius: 8px;
+}
+
+/* ========== نموذج التواصل ========== */
+.form {
+  background: var(--light);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.form label { display: block; margin: 12px 0 5px; font-weight: bold; }
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b9d3df;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+.form input:focus,
+.form textarea:focus { outline: 2px solid var(--green); }
+.form .btn { margin-top: 15px; }
+.form-msg { margin-top: 12px; font-weight: bold; }
+.form-msg.error { color: #d9534f; }
+.form-msg.success { color: var(--green); }
+.contact-info h2 { color: var(--blue-dark); margin-bottom: 10px; }
+.contact-info img { margin-top: 15px; border-radius: 12px; }
+
+/* ========== Footer ========== */
+.footer {
+  background: var(--blue-dark);
+  color: var(--white);
+  text-align: center;
+  padding: 20px 10px;
+}
+
+/* ========== Responsive للهواتف ========== */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .nav-links {
+    display: none;            /* القائمة مخفية في الهاتف */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: var(--blue);
+    padding: 10px 5%;
+  }
+  .nav-links.open { display: flex; }  /* تظهر عند الضغط على الزر */
+  .hero h1 { font-size: 1.8rem; }
+}

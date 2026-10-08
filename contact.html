@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عالم الصيدلة | تواصل معنا</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">💊 عالم الصيدلة</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="القائمة">☰</button>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="about.html">نبذة عن الصيدلة</a></li>
+          <li><a href="drugs.html">الأدوية</a></li>
+          <li><a href="diseases.html">الأمراض</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <h1>تواصل معنا</h1>
+    <p>يسعدنا استقبال أسئلتكم واقتراحاتكم</p>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+
+      <!-- نموذج التواصل (بدون Backend، يتم التحقق منه بـ JavaScript فقط) -->
+      <form id="contactForm" class="form" novalidate>
+        <label for="name">الاسم</label>
+        <input type="text" id="name" placeholder="اكتب اسمك">
+
+        <label for="email">البريد الإلكتروني</label>
+        <input type="email" id="email" placeholder="example@mail.com">
+
+        <label for="message">الرسالة</label>
+        <textarea id="message" rows="5" placeholder="اكتب رسالتك هنا"></textarea>
+
+        <button type="submit" class="btn btn-primary">إرسال</button>
+        <p id="formMsg" class="form-msg"></p>
+      </form>
+
+      <div class="contact-info">
+        <h2>معلومات التواصل</h2>
+        <p>📧 pharmacy.project@example.com</p>
+        <p>🏫 كلية الصيدلة – الجامعة</p>
+        <p>🕒 الأحد – الخميس: 9 ص – 3 م</p>
+        <img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?w=700&q=70" alt="فريق طبي">
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 عالم الصيدلة – مشروع جامعي لأغراض تعليمية فقط.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
